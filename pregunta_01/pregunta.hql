@@ -21,6 +21,8 @@ ROW FORMAT delimited fields terminated by '\t';
 
 LOAD DATA LOCAL INPATH "data.tsv" OVERWRITE INTO TABLE tabla_p1;
 
+INSERT OVERWRITE DIRECTORY 'output'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 SELECT letra, COUNT(1) as count
 FROM tabla_p1
 GROUP BY letra
